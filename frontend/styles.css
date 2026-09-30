@@ -1,0 +1,306 @@
+:root {
+    --color-bg: #08090a;
+    --color-panel: #0f1011;
+    --color-surface: #191a1b;
+    --color-text-primary: #f7f8f8;
+    --color-text-secondary: #d0d6e0;
+    --color-text-tertiary: #8a8f98;
+    --color-text-quaternary: #62666d;
+    --color-accent: #5e6ad2;
+    --color-accent-hover: #828fff;
+    --color-border-subtle: rgba(255,255,255,0.05);
+    --color-border-standard: rgba(255,255,255,0.08);
+    --color-success: #27a644;
+    --color-success-emerald: #10b981;
+    --font-primary: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+    font-feature-settings: 'cv01', 'ss03';
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 48px;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.header-title {
+    font-size: 48px;
+    font-weight: 510;
+    letter-spacing: -1.056px;
+    margin-bottom: 12px;
+}
+
+.header-subtitle {
+    font-size: 18px;
+    color: var(--color-text-secondary);
+    font-weight: 400;
+    letter-spacing: -0.165px;
+}
+
+.search-main {
+    background-color: var(--color-panel);
+    border: 1px solid var(--color-border-standard);
+    border-radius: 8px;
+    padding: 32px;
+}
+
+.search-form {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    align-items: stretch;
+}
+
+.search-input-group {
+    flex: 1;
+    display: flex;
+    gap: 8px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 12px 14px;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border-standard);
+    border-radius: 6px;
+    color: var(--color-text-secondary);
+    font-size: 16px;
+    font-family: var(--font-primary);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-input:focus {
+    border-color: var(--color-accent);
+    box-shadow: rgba(0,0,0,0.2) 0px 0px 0px 1px;
+}
+
+.search-input::placeholder {
+    color: var(--color-text-tertiary);
+}
+
+.search-button {
+    padding: 0 24px;
+    background-color: var(--color-accent);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 510;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-button:hover {
+    background-color: var(--color-accent-hover);
+}
+
+.search-button:active {
+    transform: scale(0.98);
+}
+
+.search-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+}
+
+.option-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    cursor: user-select;
+}
+
+.option-label input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--color-accent);
+}
+
+.boolean-operators {
+    display: flex;
+    gap: 8px;
+}
+
+.operators-label {
+    font-size: 14px;
+    color: var(--color-text-tertiary);
+    margin-right: 8px;
+}
+
+.operator-btn {
+    padding: 4px 10px;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 4px;
+    color: var(--color-text-secondary);
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.operator-btn:hover {
+    background-color: var(--color-border-standard);
+    color: var(--color-text-primary);
+}
+
+.operator-btn.active {
+    background-color: var(--color-accent);
+    color: white;
+    border-color: var(--color-accent);
+}
+
+.results-container {
+    min-height: 200px;
+}
+
+.search-status {
+    padding: 24px;
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: 16px;
+    background-color: var(--color-surface);
+    border-radius: 6px;
+    border: 1px solid var(--color-border-subtle);
+}
+
+.result-item {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 16px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.result-item:hover {
+    border-color: var(--color-border-standard);
+    box-shadow: rgba(0,0,0,0.2) 0px 0px 0px 1px;
+}
+
+.result-title {
+    font-size: 20px;
+    font-weight: 590;
+    letter-spacing: -0.24px;
+    margin-bottom: 8px;
+    color: var(--color-text-primary);
+}
+
+.result-authors {
+    font-size: 14px;
+    color: var(--color-text-tertiary);
+    margin-bottom: 4px;
+}
+
+.result-venue {
+    font-size: 14px;
+    color: var(--color-text-tertiary);
+    margin-bottom: 8px;
+}
+
+.result-abstract {
+    font-size: 15px;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.result-links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.result-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    background-color: var(--color-accent);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.result-link:hover {
+    background-color: var(--color-accent-hover);
+}
+
+.result-link.secondary {
+    background-color: transparent;
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border-subtle);
+}
+
+.result-link.secondary:hover {
+    background-color: var(--color-border-standard);
+    color: var(--color-text-primary);
+}
+
+.footer {
+    text-align: center;
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--color-border-subtle);
+    color: var(--color-text-tertiary);
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 16px;
+    }
+    
+    .header-title {
+        font-size: 32px;
+        letter-spacing: -0.704px;
+    }
+    
+    .search-form {
+        flex-direction: column;
+    }
+    
+    .search-button {
+        width: 100%;
+    }
+    
+    .search-options {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .option-label {
+        justify-content: flex-start;
+    }
+}

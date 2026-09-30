@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Search Tool</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="header-title">Academic Search</h1>
+            <p class="header-subtitle">Pesquisa acadêmica em bases de artigos científicos</p>
+        </header>
+        
+        <main class="search-main">
+            <form id="search-form" class="search-form">
+                <div class="search-input-group">
+                    <input 
+                        type="text" 
+                        id="search-query" 
+                        placeholder="Digite sua pesquisa (ex: surveillance capitalism data brokers)" 
+                        class="search-input"
+                        autocomplete="off"
+                    >
+                    <button type="submit" class="search-button">Buscar</button>
+                </div>
+                <div class="search-options">
+                    <label class="option-label">
+                        <input type="checkbox" id="use-scihub" checked>
+                        Tentar acesso via Sci-Hub para artigos fechados
+                    </label>
+                    <div class="boolean-operators">
+                        <span class="operators-label">Operadores booleanos:</span>
+                        <button type="button" class="operator-btn" data-operator="AND">AND</button>
+                        <button type="button" class="operator-btn" data-operator="OR">OR</button>
+                        <button type="button" class="operator-btn" data-operator="NOT">NOT</button>
+                        <button type="button" class="operator-btn" data-operator="">""</button>
+                    </div>
+                </div>
+            </form>
+            
+            <div id="results-container" class="results-container">
+                <div id="search-status" class="search-status">Digite sua pesquisa e pressione Buscar</div>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <p>Academic Search Tool - Built with Linear Design System</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
