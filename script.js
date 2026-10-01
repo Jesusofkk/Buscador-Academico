@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Sci-Hub link (if enabled and DOI exists)
             if (useScihub && doi) {
                 const scihubLink = document.createElement('a');
-                scihubLink.href = `https://sci-hub.se/${doi}`;
+                scihubLink.href = `https://sci-hub.sh/pt-br/${doi}`;
                 scihubLink.target = '_blank';
                 scihubLink.rel = 'noopener';
                 scihubLink.className = 'result-link secondary';
