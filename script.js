@@ -27,7 +27,12 @@ document.addEventListener('DOMContentLoaded', function() {
             activeOperator = this.getAttribute('data-operator');
             
             // Insert operator at cursor position in search input
-            insertAtCursor(searchQuery, ` ${activeOperator} `);
+            if (activeOperator) {
+                insertAtCursor(searchQuery, ` ${activeOperator} `);
+            } else {
+                // If no operator (empty button), just focus the input without inserting
+                searchQuery.focus();
+            }
         });
     });
     
@@ -175,8 +180,10 @@ document.addEventListener('DOMContentLoaded', function() {
             // DOI link (publisher)
             const doi = work.doi;
             if (doi) {
+                // Extract DOI identifier (remove http://doi.org/ or https://doi.org/ prefix if present)
+                const doiId = doi.replace(/^(https?:\/\/)?(dx\.)?doi\.org\//, '');
                 const doiLink = document.createElement('a');
-                doiLink.href = `https://doi.org/${doi}`;
+                doiLink.href = `https://doi.org/${doiId}`;
                 doiLink.target = '_blank';
                 doiLink.rel = 'noopener';
                 doiLink.className = 'result-link';
