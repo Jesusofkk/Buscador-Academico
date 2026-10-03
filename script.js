@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Extract DOI identifier (remove http://doi.org/ or https://doi.org/ prefix if present)
                 const doiId = doi.replace(/^(https?:\/\/)?(dx\.)?doi\.org\//, '');
                 const scihubLink = document.createElement('a');
-                scihubLink.href = `https://sci-hub.sh/pt-br/${doiId}`;
+                scihubLink.href = `https://www.sci-hub.in/${doiId}`;
                 scihubLink.target = '_blank';
                 scihubLink.rel = 'noopener';
                 scihubLink.className = 'result-link secondary';
